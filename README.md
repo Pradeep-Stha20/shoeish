@@ -17,12 +17,17 @@ E-Commerce site for shoes with Esewa Integration
   - Payment Integration
     - Esewa wallet is added 
  
-# Designed and Developed in team for semester Project
+# Designed and Developed for semester Project
 # For Running this 
 - Simply you can clone the proect
 - Import sql file name ShoeIsh.sql
+<<<<<<< HEAD
 - URL for customer panel : localhost/shoeish 
 - URL for admin panel : localhost/shoeish/admin/
+=======
+- URL for customer panel :localhost/shoeish/login.php
+- URL for admin panel : localhost/shoish/admin/login.php
+>>>>>>> 804b1a694668809bd84161ca990bd64fbc3fcb44
 
 # Credentials for admin Panel
 - Email : pradeep@gmail.com
