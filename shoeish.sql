@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Apr 01, 2024 at 06:02 PM
+-- Host: 127.0.0.1
+-- Generation Time: Apr 26, 2024 at 09:53 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ShoeIshshop`
+-- Database: `ecommerce`
 --
 
 -- --------------------------------------------------------
@@ -52,7 +52,7 @@ CREATE TABLE `tbl_customer` (
 --
 
 INSERT INTO `tbl_customer` (`cust_id`, `cust_name`, `cust_email`, `cust_phone`, `cust_district`, `cust_address`, `cust_city`, `cust_s_name`, `cust_s_phone`, `cust_s_district`, `cust_s_address`, `cust_s_city`, `cust_password`, `cust_token`, `cust_datetime`, `cust_timestamp`, `cust_status`) VALUES
-(16, 'mac', 'mac@gmail.com', '9811111111', 53, 'pulchowk', 'aa', 'mac shrestha', '9811111111', 28, 'danf', 'dang', '140c1f12feeb2c52dfbeb2da6066a73a', 'a3ee24d88e416c30db4077394ba4fdc4', '2021-08-12 11:24:43', '1628746783', 1);
+(16, 'Pradeep Shrestha', 'cust@gmail.com', '9811111111', 28, 'Jarankhu', 'Kathmandu', 'Pradeep Shrestha', '9811111110', 28, 'Jarankhu', 'KTM', '81dc9bdb52d04dc20036dbd8313ed055', 'a3ee24d88e416c30db4077394ba4fdc4', '2021-08-12 11:24:43', '1628746783', 1);
 
 -- --------------------------------------------------------
 
@@ -165,23 +165,17 @@ CREATE TABLE `tbl_end_category` (
 --
 
 INSERT INTO `tbl_end_category` (`ecat_id`, `ecat_name`, `mcat_id`) VALUES
-(3, 'TUF series', 5),
-(4, 'Nitro series', 2),
-(5, 'G series', 3),
-(6, 'M series', 4),
-(7, 'Gaming', 6),
-(8, 'Normal', 6),
-(9, 'Gaming', 7),
-(10, 'Heavy', 7),
-(11, 'Normal', 8),
-(12, 'Gaming', 8),
-(13, 'SSD', 9),
-(14, 'HDD', 9),
-(15, 'RAM', 9),
-(16, 'Dell', 10),
-(17, 'Acer', 11),
-(18, 'Prolink', 12),
-(22, 'SMART', 16);
+(4, 'Dr Martin', 2),
+(5, 'Reebok', 3),
+(6, 'New Balance', 4),
+(8, 'Black Leather Shoe', 6),
+(10, 'Caliber', 7),
+(14, 'Nike', 9),
+(15, 'Caliber', 9),
+(16, 'L V', 10),
+(17, 'Caliber', 11),
+(18, 'Nike', 12),
+(28, 'Addidas', 5);
 
 -- --------------------------------------------------------
 
@@ -200,9 +194,9 @@ CREATE TABLE `tbl_faq` (
 --
 
 INSERT INTO `tbl_faq` (`faq_id`, `faq_title`, `faq_content`) VALUES
-(1, 'How to find an item on Shoe IshGI?', '<p style=\"box-sizing: inherit; text-rendering: optimizeLegibility; margin: 0.2rem 0px 0.5rem; padding: 0px; line-height: 1.4; background-color: rgb(250, 250, 250);\"><span style=\"color: inherit;\">Search your favourite product through categorywise.</span></p>\r\n'),
-(7, 'What if product is damaged ?', '<p>You can refund it .</p>'),
-(8, 'What are the payment methods?', '<p>Esewa, Bank Deposit</p>');
+(1, 'How to find an item on Shoe Ish?', '<p style=\"box-sizing: inherit; text-rendering: optimizeLegibility; margin: 0.2rem 0px 0.5rem; padding: 0px; line-height: 1.4; background-color: rgb(250, 250, 250);\"><span style=\"color: inherit;\">Search your favourite product through category wise or even directly.</span></p>\r\n'),
+(7, 'What if product is damaged ?', '<p>You can refund it under the terms and conditions .</p>'),
+(8, 'What are the payment methods?', '<p>Right now the payment options are E-sewa and Bank Deposit but you will see many other options too.</p>');
 
 -- --------------------------------------------------------
 
@@ -354,18 +348,16 @@ CREATE TABLE `tbl_mid_category` (
 --
 
 INSERT INTO `tbl_mid_category` (`mcat_id`, `mcat_name`, `tcat_id`) VALUES
-(2, 'Acer', 3),
-(3, 'Dell', 3),
-(4, 'MSI', 3),
-(5, 'Asus', 3),
-(6, 'Keyboard', 1),
-(7, 'Mouse', 1),
-(8, 'Headphones', 1),
-(9, 'Storage', 1),
-(10, 'Office use', 2),
-(11, 'Heavy use', 2),
-(12, 'Normal use', 2),
-(16, 'Samsung', 7);
+(2, 'Boots', 3),
+(3, 'Formal', 3),
+(4, 'Casual', 3),
+(5, 'Sports', 3),
+(6, 'Formal', 1),
+(7, 'Casual', 1),
+(9, 'Sports', 1),
+(10, 'Heels', 2),
+(11, 'Boots', 2),
+(12, 'Sports', 2);
 
 -- --------------------------------------------------------
 
@@ -389,8 +381,8 @@ CREATE TABLE `tbl_order` (
 -- Dumping data for table `tbl_order`
 --
 
-INSERT INTO `tbl_order` (`id`, `product_id`, `product_name`, `ssd`, `ram`, `quantity`, `unit_price`, `payment_id`, `cust_id`) VALUES
-(40, 5, 'Light gaming mouse', 0, 0, '1', '800', '1628746979', 16);
+INSERT INTO `tbl_order` (`id`, `product_id`, `product_name`, `quantity`, `unit_price`, `payment_id`, `cust_id`) VALUES
+(41, 25, 'New Balance 9060','1', '5100', '1712197544', 16);
 
 -- --------------------------------------------------------
 
@@ -417,7 +409,7 @@ CREATE TABLE `tbl_page` (
 --
 
 INSERT INTO `tbl_page` (`id`, `about_title`, `about_content`, `about_banner`, `about_meta_title`, `faq_title`, `faq_banner`, `faq_meta_title`, `contact_title`, `contact_banner`, `contact_meta_title`) VALUES
-(1, 'About Us', '<h1 style=\"text-align: justify; \"><b>Final Semester project</b></h1><h2 style=\"text-align: justify; \">Supervisor<b>: Mr. Prakash Gautam</b></h2><h2 style=\"text-align: justify; \"><b>Group Members:</b></h2><h3 style=\"text-align: justify; \">Ajay Prajapati<br>Jitendra Shrestha<br>Nitesh KC</h3>\r\n', 'about-banner.jpg', 'DigiShop | About Us', 'FAQ', 'faq-banner.jpg', 'DigiShop | FAQ', 'Contact Us', 'contact-banner.jpg', 'DigiShop | Contact');
+(1, 'About Us', '<h1 style=\"text-align: justify; \"><b>5th Semester Project</b></h1><h2 style=\"text-align: justify; \">This is just a sample for B2C e-commerce website. This website contains a platform for buying shoes with payment gateway.</h2><p style=\"text-align: justify;\"><br></p>\r\n', 'about-banner.jpg', 'Shoe Ish | About Us', 'FAQ', 'faq-banner.jpg', 'DigiShop | FAQ', 'Contact Us', 'contact-banner.jpg', 'DigiShop | Contact');
 
 -- --------------------------------------------------------
 
@@ -444,8 +436,7 @@ CREATE TABLE `tbl_payment` (
 --
 
 INSERT INTO `tbl_payment` (`id`, `customer_id`, `customer_name`, `customer_email`, `payment_date`, `paid_amount`, `bank_transaction_info`, `payment_method`, `payment_status`, `shipping_status`, `payment_id`) VALUES
-(43, 16, 'mac', 'mac@gmail.com', '2024-03-30 19:23:49', 812, 'id 2234\r\n024/12', 'Bank Deposit', 'Pending', 'Pending', '1711805929'),
-(42, 16, 'mac', 'mac@gmail.com', '2021-08-12 11:27:59', 800, 'id : 12334\r\ndate : aug 12', 'Bank Deposit', 'Pending', 'Pending', '1628746979');
+(44, 16, 'Pradeep Shrestha', 'cust@gmail.com', '2024-04-04 08:11:11', 5100, '', 'Esewa', 'Completed', 'Completed', '1712197544');
 
 -- --------------------------------------------------------
 
@@ -476,19 +467,16 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`p_id`, `p_name`, `p_old_price`, `p_current_price`, `p_qty`, `p_featured_photo`, `p_description`, `p_short_description`, `p_feature`, `p_condition`, `p_return_policy`, `p_total_view`, `p_is_featured`, `p_is_active`, `ecat_id`) VALUES
-(3, 'New Durable Keyboard', '', '200', 20, 'product-featured-3.jpg', '<p>This is very good in design.</p>', '<p>Very durable</p>', '<p>No</p>', '<p><br></p>', '<p>Non returnable</p>', 4, 0, 1, 8),
-(4, 'New Gaming Keyboard', '', '1200', 20, 'product-featured-4.png', '<p>Gaming Keyboard</p>', '', '', '', '', 9, 0, 1, 7),
-(5, 'Light gaming mouse', '', '800', 18, 'product-featured-5.jpeg', '', '', '', '', '', 87, 1, 1, 9),
-(6, 'Large Bass Boosted', '', '4000', 19, 'product-featured-6.jpg', '', '', '', '', '', 14, 0, 1, 12),
-(7, 'Samsung ssd', '4000', '3000', 20, 'product-featured-7.jpg', '', '', '', '', '', 1, 0, 1, 13),
-(8, 'Dell desktop', '', '30000', 20, 'product-featured-8.jpg', '', '', '', '', '', 1, 0, 1, 16),
-(9, 'Acer nitro 5', '', '105000', 19, 'product-featured-9.png', '', '', '', '', '', 28, 1, 1, 4),
-(10, 'G3 gaming Dell Laptop', '', '88000', 5, 'product-featured-10.jpg', '', '', '', '', '', 26, 1, 1, 5),
-(11, 'New MSI gaming laptop', '110000', '105000', 10, 'product-featured-11.jpg', '', '', '', '', '', 10, 0, 1, 6),
-(12, 'Asus Gaming Laptop', '', '150000', 1, 'product-featured-12.jpg', '', '', '', '', '', 11, 0, 1, 3),
-(15, 'fantech gaming', '10', '12', 9, 'product-featured-15.jpg', '', '', '', '', '', 21, 0, 1, 7),
-(16, 'RAM', '', '4000', 9, 'product-featured-16.jpg', '<p>popular ram</p>', '', '', '', '', 20, 0, 1, 15),
-(17, 'Smart Curved Tv', '', '120000', 9, 'product-featured-17.jpg', '<p>televison</p>', 'televison', '<p>-</p><p>-</p><p>-features 3</p>', '', '', 50, 1, 1, 22);
+(22, 'Nike Vapormax Plus', '8800', '6100', 20, 'product-featured-22.png', '<p>Nike sport shoes for women.</p>', '', '', '', '', 3, 1, 1, 18),
+(23, 'Reebok Shaq OG', '5650', '4870', 20, 'product-featured-23.png', '', '', '', '', '', 0, 1, 1, 5),
+(24, 'Dr Martin 1460', '5000', '4500', 20, 'product-featured-24.png', '', '', '', '', '', 14, 1, 1, 4),
+(25, 'New Balance 9060', '6500', '5100', 19, 'product-featured-25.png', '', '', '', '', '', 3, 1, 1, 6),
+(26, 'Addidas Forum Mid', '6900', '5800', 20, 'product-featured-26.png', '', '', '', '', '', 2, 1, 1, 28),
+(27, 'Formal Black Shoe for Girls', '3000', '2800', 20, 'product-featured-27.png', '', '', '', '', '', 6, 1, 1, 8),
+(28, 'Caliber White Sneaker for kids', '2500', '2000', 20, 'product-featured-28.png', '', '', '', '', '', 3, 1, 1, 10),
+(29, 'Nike Dunk Low', '2900', '2100', 20, 'product-featured-29.png', '', '', '', '', '', 0, 1, 1, 14),
+(30, 'Kade LV platform Sandel', '6800', '6000', 20, 'product-featured-30.png', '', '', '', '', '', 0, 1, 1, 16),
+(31, 'Caliber CRF Boot for Women', '6300', '5600', 20, 'product-featured-31.png', '', '', '', '', '', 0, 1, 1, 17);
 
 -- --------------------------------------------------------
 
@@ -501,108 +489,6 @@ CREATE TABLE `tbl_product_photo` (
   `photo` varchar(255) NOT NULL,
   `p_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `tbl_product_photo`
---
-
-INSERT INTO `tbl_product_photo` (`pp_id`, `photo`, `p_id`) VALUES
-(2, '2.jpeg', 3),
-(3, '3.jpg', 4),
-(4, '4.jpg', 7),
-(5, '5.jpg', 9),
-(6, '6.jpg', 10),
-(7, '7.jpg', 11),
-(8, '8.jpg', 12),
-(11, '11.jpg', 16);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_product_ram`
---
-
-CREATE TABLE `tbl_product_ram` (
-  `id` int(11) NOT NULL,
-  `ram_id` int(11) NOT NULL,
-  `p_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `tbl_product_ram`
---
-
-INSERT INTO `tbl_product_ram` (`id`, `ram_id`, `p_id`) VALUES
-(9, 21, 9),
-(10, 23, 9),
-(11, 24, 9),
-(12, 25, 9),
-(13, 23, 10),
-(14, 24, 10),
-(15, 23, 11),
-(16, 24, 11),
-(17, 25, 11),
-(24, 21, 12),
-(25, 23, 12),
-(26, 24, 12),
-(44, 21, 16),
-(45, 23, 16),
-(46, 24, 16),
-(47, 25, 16);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_product_ssd`
---
-
-CREATE TABLE `tbl_product_ssd` (
-  `id` int(11) NOT NULL,
-  `ssd_id` int(11) NOT NULL,
-  `p_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `tbl_product_ssd`
---
-
-INSERT INTO `tbl_product_ssd` (`id`, `ssd_id`, `p_id`) VALUES
-(9, 1, 7),
-(10, 2, 7),
-(11, 3, 7),
-(12, 4, 7),
-(13, 1, 9),
-(14, 2, 9),
-(15, 3, 9),
-(16, 4, 9),
-(17, 1, 10),
-(18, 2, 10),
-(19, 1, 11),
-(20, 2, 11),
-(27, 1, 12),
-(28, 2, 12),
-(29, 3, 12);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_ram`
---
-
-CREATE TABLE `tbl_ram` (
-  `ram_id` int(11) NOT NULL,
-  `ram_capacity` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `tbl_ram`
---
-
-INSERT INTO `tbl_ram` (`ram_id`, `ram_capacity`) VALUES
-(21, 4),
-(23, 8),
-(24, 12),
-(25, 16);
 
 -- --------------------------------------------------------
 
@@ -617,14 +503,6 @@ CREATE TABLE `tbl_rating` (
   `comment` text NOT NULL,
   `rating` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `tbl_rating`
---
-
-INSERT INTO `tbl_rating` (`rt_id`, `p_id`, `cust_id`, `comment`, `rating`) VALUES
-(2, 5, 9, 'satisfactory', 5),
-(5, 5, 11, 'worst', 1);
 
 -- --------------------------------------------------------
 
@@ -644,9 +522,9 @@ CREATE TABLE `tbl_service` (
 --
 
 INSERT INTO `tbl_service` (`id`, `title`, `content`, `photo`) VALUES
-(5, 'Easy Returns', 'Return any item before 15 days. No questions asked.', 'service-5.jpg'),
-(6, 'Free Shipping', 'Enjoy free shipping in Kathmandu valley. More districts to be added sooner.', 'service-6.png'),
-(7, 'Fast Delivery', 'Items are shipped in 24 hours.', 'service-7.gif');
+(5, 'Easy Returns', 'Return any item before 30 days. The shoes should not be worn and used.', 'service-5.png'),
+(6, 'Free Shipping', 'Enjoy free shipping to over five cities. More places to be added sooner.', 'service-6.png'),
+(7, 'Fast Delivery', 'Items are shipped in 24 hours.', 'service-7.png');
 
 -- --------------------------------------------------------
 
@@ -695,7 +573,7 @@ CREATE TABLE `tbl_settings` (
 --
 
 INSERT INTO `tbl_settings` (`id`, `logo`, `favicon`, `footer_about`, `footer_copyright`, `contact_address`, `contact_email`, `contact_phone`, `contact_map_iframe`, `total_featured_product_home`, `total_latest_product_home`, `total_popular_product_home`, `meta_title_home`, `banner_login`, `banner_registration`, `banner_search`, `banner_cart`, `banner_checkout`, `banner_product_category`, `featured_product_title`, `featured_product_subtitle`, `latest_product_title`, `latest_product_subtitle`, `popular_product_title`, `popular_product_subtitle`, `bank_detail`, `before_head`, `after_body`, `before_body`, `home_service_on_off`, `home_featured_product_on_off`, `home_latest_product_on_off`, `home_popular_product_on_off`) VALUES
-(1, 'logo.png', 'favicon.png', '', 'Copyright © 2021. All Rights Reserved. | asura', 'TOKHA, KATHMANDU', 'support@asura.com', '0987654', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14140.581290619544!2d85.29238518087945!3d27.620015525248807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb17b053175627%3A0x38905d236dc497b8!2sBungamati!5e0!3m2!1sen!2snp!4v1624168439782!5m2!1sen!2snp\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>', 10, 10, 10, 'DigiShop | Online Digital Shop', 'banner_login.jpg', 'banner_registration.jpg', 'banner_search.jpg', 'banner_cart.jpg', 'banner_checkout.jpg', 'banner_product_category.jpg', 'Featured Products', 'See all our featured products from here', 'Latest Products', 'See all our latest products from here', 'Popular Products', 'See all our popular products from here', 'Bank Name: ABC Bank\r\nAccount Number: 1222320234444\r\nBranch Name: Lalitpur Branch\r\nCountry: Nepal', '', '', '', 1, 1, 1, 1);
+(1, 'logo.png', 'favicon.png', '', 'Copyright © 2021. All Rights Reserved. | Shoe Ish', 'SORAKHUTTE, KATHMANDU', 'support@shoeish.com', '0987654321', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5183.556580100734!2d85.30640745371744!3d27.720804404248685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snp!4v1712146358310!5m2!1sen!2snp\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', 10, 10, 10, 'Shoe Ish | Online Digital Shop For Shoes', 'banner_login.jpg', 'banner_registration.jpg', 'banner_search.jpg', 'banner_cart.jpg', 'banner_checkout.jpg', 'banner_product_category.png', 'Featured Products', 'See all our exclusive featured shoes from here', 'Latest Products', 'Grab a chance to buy our latest design shoes from here.', 'Popular Products', 'Have a look towards top most sold products', 'Bank Name: ABC Bank\r\nAccount Number: 1222320234444\r\nBranch Name: Lalitpur Branch\r\nCountry: Nepal', '', '', '', 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -757,9 +635,9 @@ CREATE TABLE `tbl_slider` (
 --
 
 INSERT INTO `tbl_slider` (`id`, `photo`, `heading`, `content`, `button_text`, `button_url`, `position`) VALUES
-(1, 'slider-1.jpg', 'Welcome to DigiShop', 'Acer Nitro 5 Series', 'Buy Now', 'https://localhost/digi/product-category.php?id=4&type=end-category', 'Right'),
-(2, 'slider-2.jpg', 'MSI New Gaming Laptop', '', 'Check', 'https://localhost/digi/product.php?id=11', 'Right'),
-(3, 'slider-3.jpeg', 'Get Your accessories', '', 'Check', 'http://localhost/digi/product-category.php?id=1&type=top-category', 'Right');
+(1, 'slider-1.png', 'Welcome ', 'Spring Sneakers', 'Get Now', 'http://localhost:8080/digi/product.php?id=27', 'Right'),
+(2, 'slider-2.png', 'Sports Shoes', '', 'Get Now', 'https://localhost/digi/product.php?id=11', 'Right'),
+(3, 'slider-3.png', 'Stylish Wears', '', 'Get Now', 'http://localhost/digi/product-category.php?id=1&type=top-category', 'Right');
 
 -- --------------------------------------------------------
 
@@ -786,27 +664,6 @@ INSERT INTO `tbl_social` (`social_id`, `social_name`, `social_url`, `social_icon
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_ssd`
---
-
-CREATE TABLE `tbl_ssd` (
-  `ssd_id` int(11) NOT NULL,
-  `ssd_capacity` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `tbl_ssd`
---
-
-INSERT INTO `tbl_ssd` (`ssd_id`, `ssd_capacity`) VALUES
-(1, '256'),
-(2, '512'),
-(3, '1024'),
-(4, '2048');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbl_top_category`
 --
 
@@ -821,10 +678,9 @@ CREATE TABLE `tbl_top_category` (
 --
 
 INSERT INTO `tbl_top_category` (`tcat_id`, `tcat_name`, `show_on_menu`) VALUES
-(1, 'Accessories', 1),
-(2, 'Desktops', 1),
-(3, 'Laptops', 1),
-(7, 'Televison', 1);
+(1, 'Kid\'s', 1),
+(2, 'Women\'s', 1),
+(3, 'Men\'s', 1);
 
 -- --------------------------------------------------------
 
@@ -848,7 +704,7 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id`, `full_name`, `email`, `phone`, `password`, `photo`, `role`, `status`) VALUES
-(1, 'Asura', 'sizan@gmail.com', '9816207570', '21232f297a57a5a743894a0e4a801fc3', 'user-1.png', 'Super Admin', 'Active');
+(1, 'Pradeep', 'pradeep@gmail.com', '9816207570', '827ccb0eea8a706c4c34a16891f84e7b', 'user-1.png', 'Super Admin', 'Active');
 
 --
 -- Indexes for dumped tables
@@ -921,24 +777,6 @@ ALTER TABLE `tbl_product_photo`
   ADD PRIMARY KEY (`pp_id`);
 
 --
--- Indexes for table `tbl_product_ram`
---
-ALTER TABLE `tbl_product_ram`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_product_ssd`
---
-ALTER TABLE `tbl_product_ssd`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_ram`
---
-ALTER TABLE `tbl_ram`
-  ADD PRIMARY KEY (`ram_id`);
-
---
 -- Indexes for table `tbl_rating`
 --
 ALTER TABLE `tbl_rating`
@@ -981,12 +819,6 @@ ALTER TABLE `tbl_social`
   ADD PRIMARY KEY (`social_id`);
 
 --
--- Indexes for table `tbl_ssd`
---
-ALTER TABLE `tbl_ssd`
-  ADD PRIMARY KEY (`ssd_id`);
-
---
 -- Indexes for table `tbl_top_category`
 --
 ALTER TABLE `tbl_top_category`
@@ -1018,7 +850,7 @@ ALTER TABLE `tbl_district`
 -- AUTO_INCREMENT for table `tbl_end_category`
 --
 ALTER TABLE `tbl_end_category`
-  MODIFY `ecat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `ecat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `tbl_faq`
@@ -1042,7 +874,7 @@ ALTER TABLE `tbl_mid_category`
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `tbl_page`
@@ -1054,37 +886,19 @@ ALTER TABLE `tbl_page`
 -- AUTO_INCREMENT for table `tbl_payment`
 --
 ALTER TABLE `tbl_payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `tbl_product_photo`
 --
 ALTER TABLE `tbl_product_photo`
   MODIFY `pp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT for table `tbl_product_ram`
---
-ALTER TABLE `tbl_product_ram`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
-
---
--- AUTO_INCREMENT for table `tbl_product_ssd`
---
-ALTER TABLE `tbl_product_ssd`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
-
---
--- AUTO_INCREMENT for table `tbl_ram`
---
-ALTER TABLE `tbl_ram`
-  MODIFY `ram_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `tbl_rating`
@@ -1127,12 +941,6 @@ ALTER TABLE `tbl_slider`
 --
 ALTER TABLE `tbl_social`
   MODIFY `social_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT for table `tbl_ssd`
---
-ALTER TABLE `tbl_ssd`
-  MODIFY `ssd_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_top_category`
