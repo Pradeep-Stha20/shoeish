@@ -25,7 +25,7 @@ E-Commerce site for shoes with Esewa Integration
 - URL for admin panel : localhost/shoish/admin/login.php
 
 # Credentials for admin Panel
-- Email : tjiten123@gmail.com
-- password: admin
+- Email : pradeep@gmail.com
+- password: 12345
 
 # If you have any queries about this project feel free to contact .
