@@ -1,5 +1,5 @@
 # ShoeIsh
-E-Commerce site for electronic gadgets with Esewa Integration
+E-Commerce site for shoes with Esewa Integration
 # Languages Used
   - Frontend: HTML, CSS, BOOTSTRAP
   - BACKEND: PHP, MySQL for database
@@ -17,12 +17,12 @@ E-Commerce site for electronic gadgets with Esewa Integration
   - Payment Integration
     - Esewa wallet is added 
  
-# Designed and Developed in team for semester Project
+# Designed and Developed for semester Project
 # For Running this 
 - Simply you can clone the proect
 - Import sql file name ShoeIsh.sql
-- URL for customer panel : localhost/digi 
-- URL for admin panel : localhost/digi/admin/
+- URL for customer panel :localhost/shoeish/login.php
+- URL for admin panel : localhost/shoish/admin/login.php
 
 # Credentials for admin Panel
 - Email : tjiten123@gmail.com
